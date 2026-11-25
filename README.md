@@ -40,3 +40,12 @@ https://github.com/joshnh/Git-Commands
 
 Okay, so far so good...but I need the hzellar library
 
+sudo apt-get install -y git python-dev-is-python3 python3-pil cython3 build-essential
+
+sudo apt install python3-pip
+
+And now, security.  :(  Pip only works in virtual environments.  So, you need to set one up:
+python3 -m venv myenv
+source myenv/bin/activate   <--activates virtual env.  Will see on command bar
+pip install git+https://github.com/hzeller/rpi-rgb-led-matrix
+
