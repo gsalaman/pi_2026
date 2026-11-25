@@ -74,3 +74,7 @@ and then run with
 Image view needed to read directories.  I chmoded it to 755:
 chmod 755 /home/pi
 
+needed fonts for spacetank:
+sudo apt-get install ttf-mscorefonts-installer
+
+
