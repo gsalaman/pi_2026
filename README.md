@@ -71,4 +71,6 @@ I'm gonna stick with VMs for now.  Means I need to activate:
 and then run with  
 `sudo ~/myenv/bin/python <program.py>`  
 
+Image view needed to read directories.  I chmoded it to 755:
+chmod 755 /home/pi
 
