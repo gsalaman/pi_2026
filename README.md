@@ -45,7 +45,30 @@ sudo apt-get install -y git python-dev-is-python3 python3-pil cython3 build-esse
 sudo apt install python3-pip
 
 And now, security.  :(  Pip only works in virtual environments.  So, you need to set one up:
-python3 -m venv myenv
-source myenv/bin/activate   <--activates virtual env.  Will see on command bar
-pip install git+https://github.com/hzeller/rpi-rgb-led-matrix
+python3 -m venv myenv  
+source myenv/bin/activate   <--activates virtual env.  Will see on command bar  
+pip install git+https://github.com/hzeller/rpi-rgb-led-matrix  
+pip install pillow  
+
+Now you need to run with:  
+sudo ~/myenv/bin/python matrix_test.py
+
+Okay, close.  Need to disable sound by editing /boot/firmare/config.txt (as sudo).  Change dtparam=audo=on to dtparam=audio=off
+Then reboot.
+
+Not quite there.  Need to blacklist the audio driver:
+go to /etc/modprobe.d
+sudo vi alsa-blacklist.conf
+make one line:  blacklist snd_bcm2835
+
+Yay!!!!  Happiness!  
+
+In theory, we can do this *not* in a VM...easier.  
+"If you'd rather type sudo python3 script.py like before, you could skip the venv. You'd install with sudo pip install --break-system-packages git+https://github.com/hzeller/rpi-rgb-led-matrix. The name sounds scary, but on a Pi used only for this it's a common shortcut. The venv approach above is the cleaner one."
+
+I'm gonna stick with VMs for now.  Means I need to activate:  
+`source myenv/bin/activate`  
+and then run with  
+`sudo ~/myenv/bin/python <program.py>`  
+
 
