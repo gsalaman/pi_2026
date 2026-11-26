@@ -83,3 +83,11 @@ To run on boot:
 * sudo crontab -e.  Add bottom of file add:
   `@reboot sleep 15 && /home/pi/startup.sh`
 
+But...if your file needs sudo (like all the matrix stuff!), you also need to be passwordless for that.
+```
+sudo visudo -f /etc/sudoers.d/<username>
+```
+Then add
+```
+<username> ALL=(ALL) NOPASSWD: ALL
+```
