@@ -78,7 +78,7 @@ needed fonts for spacetank:
 sudo apt-get install ttf-mscorefonts-installer
 
 To run on boot: 
-* put all commands into a startup.sh file in home.
+* put all commands into a startup.sh file in home.  ALL PATHS SHOULD BE FULL...NOT RELATIVE!!  
 * chmod this to 777
 * sudo crontab -e.  Add bottom of file add:
   `@reboot sleep 15 && /home/pi/startup.sh`
